@@ -9,11 +9,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>Title</title>
+      <title>Title</title>
   </head>
   <body>
 
-  <h1>Heil mine friend!</h1><br />
+  <h1>hallo, mein Freund!</h1><br />
 
   <h2>Все пользователи</h2><br />
 
@@ -21,13 +21,23 @@
       <ul>
           <li>Имя: <c:out value="${user.name}"/></li>
           <li>Возраст: <c:out value="${user.age}"/></li>
+
+          <form method="post" action="<c:url value='/delete_user'/>">
+              <input type="number" hidden name="id" value="${user.id}" />
+              <input type="submit" name="delete" value="Удалить"/>
+          </form>
+
+          <form method="get" action="<c:url value='/update_user'/>">
+              <input type="number" hidden name="id" value="${user.id}" />
+              <input type="submit" value="Редактированть"/>
+          </form>
       </ul>
       <hr/>
   </c:forEach>
 
   <h2>Создание нового пользователя</h2><br/>
 
-  <form method="post" action=""><%--index.jsp--%>
+  <form method="post" action="<c:url value='/add_user'/>"><%--index.jsp--%>
 
       <label><input type="text" name="name"></label>Имя<br/>
       <label><input type="text" name="age"></label>Возраст<br/>

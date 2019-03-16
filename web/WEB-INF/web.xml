@@ -4,6 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <!--Index page for app-->
     <servlet>
         <servlet-name>GetStartPageServlet</servlet-name>
         <servlet-class>servlet.GetIndexPageServlet</servlet-class>
@@ -12,6 +13,39 @@
     <servlet-mapping>
         <servlet-name>GetStartPageServlet</servlet-name>
         <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!--Addition user-->
+    <servlet>
+        <servlet-name>AddUserServlet</servlet-name>
+        <servlet-class>servlet.AddUserServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AddUserServlet</servlet-name>
+        <url-pattern>/add_user</url-pattern>
+    </servlet-mapping>
+
+    <!--Delete user-->
+    <servlet>
+        <servlet-name>DeleteUserServlet</servlet-name>
+        <servlet-class>servlet.DeleteUserServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>DeleteUserServlet</servlet-name>
+        <url-pattern>/delete_user</url-pattern>
+    </servlet-mapping>
+    
+    <!--Update user-->
+    <servlet>
+        <servlet-name>UpdateUserServlet</servlet-name>
+        <servlet-class>servlet.UpdateUserServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UpdateUserServlet</servlet-name>
+        <url-pattern>/update_user</url-pattern>
     </servlet-mapping>
 
 </web-app>
